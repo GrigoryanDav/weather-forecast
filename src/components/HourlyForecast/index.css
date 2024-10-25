@@ -1,0 +1,50 @@
+.hourly-forecast-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 100vh;
+    background: url('../../utils/Images/weather-background-hourly.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hourly-forecast-container > h2 {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    background-clip: text;
+    color: transparent;
+    font-size: 30px;
+}
+
+
+.hourly-cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.7);
+}
+
+.hour-card {
+    margin: 0 20px;
+}
+
+.hour-card > p {
+    color: red;
+}
+
+.hourly-forecast-container > a > button {
+    padding: 16px 25px;
+    border: none;
+    background:linear-gradient(to right, red, blue, orange);
+    background-clip: button;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.hourly-forecast-container > a:hover {
+    opacity: 0.7;
+}
