@@ -1,0 +1,32 @@
+import { useEffect, useState } from "react"
+import { useParams, Link } from "react-router-dom"
+import { BASE_URL, CITY, API_KEY } from "../../utils/constants"
+import './index.css'
+
+
+
+const HourlyForecast = () => {
+    const { day } = useParams()
+    const [hourForecast, setHourForecast] = useState([])
+
+    return (
+            <div className="hourly-forecast-container">
+                <h2>Hourly weather for {day}</h2>
+                <div className="hourly-cards">
+                    {
+                        hourForecast.map((reading) => (
+                            <div className="hour-card" key={reading.dt}>
+                                <img src={`https://openweathermap.org/img/wn/${reading.weather[0].icon}@2x.png`}  alt={reading.weather[0].description} />
+                                <h3>{new Date(reading.dt * 1000).toLocaleTimeString('en-EN', { hour: '2-digit', minute: '2-digit' })}</h3>
+                                <p>Temperature: {Math.round(reading.main.temp)}°C</p>
+                            </div> 
+                        ))
+                    }
+                </div>
+                <Link to='/'><button>Back to the Main</button></Link>
+            </div>
+    )
+}
+
+
+export default HourlyForecast
