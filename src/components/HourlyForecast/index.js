@@ -9,6 +9,16 @@ const HourlyForecast = () => {
     const { day } = useParams()
     const [hourForecast, setHourForecast] = useState([])
 
+    useEffect(() => {
+        fetch(`${BASE_URL}/forecast?q=${CITY}&units=metric&appid=${API_KEY}`)
+        .then((response) => response.json())
+        .then((data) => {
+            const hourlyData = data.list.filter((reading) => new Date(reading.dt * 1000).toLocaleDateString('en-EN', { weekday: 'long' }) === day)
+            setHourForecast(hourlyData)
+        })
+        .catch((error) => console.error('Failed to fetch forecast:', error));
+    }, [day])
+
     return (
             <div className="hourly-forecast-container">
                 <h2>Hourly weather for {day}</h2>
