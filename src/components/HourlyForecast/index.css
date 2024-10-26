@@ -10,7 +10,7 @@
     background-size: cover;
 }
 
-.hourly-forecast-container > h2 {
+.hourly-forecast-container>h2 {
     background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
     background-clip: text;
     color: transparent;
@@ -27,7 +27,7 @@
     justify-content: center;
     padding: 20px;
     backdrop-filter: blur(10px);
-    box-shadow: 2px 4px 8px rgba(0,0,0,0.7);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
 .hour-card {
@@ -37,8 +37,8 @@
     cursor: pointer;
     padding: 15px;
     border-radius: 10px;
-    background-color: rgba(255,255,255,0.5);
-    box-shadow: 1px 2px 5px rgba(0,0,0,0.3);
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
 }
 
@@ -46,38 +46,38 @@
     transform: scale(1.05);
 }
 
-.hour-card > p {
+.hour-card>p {
     color: red;
 }
 
-.hourly-forecast-container > a > button {
+.hourly-forecast-container>a>button {
     padding: 16px 25px;
     border: none;
-    background:linear-gradient(to right, red, orange, blue);
+    background: linear-gradient(to right, red, orange, blue);
     background-clip: button;
     font-size: 16px;
     cursor: pointer;
     margin-top: 20px;
 }
 
-.hourly-forecast-container > a:hover {
+.hourly-forecast-container>a:hover {
     opacity: 0.7;
 }
 
 @media(max-width:555px) {
-    .hourly-forecast-container > h2 {
+    .hourly-forecast-container>h2 {
         font-size: 25px;
     }
 }
 
 @media(max-width:460px) {
-    .hourly-forecast-container > h2 {
+    .hourly-forecast-container>h2 {
         font-size: 20px;
     }
 }
 
 @media(max-width:375px) {
-    .hourly-forecast-container > h2 {
+    .hourly-forecast-container>h2 {
         font-size: 16px;
     }
 }

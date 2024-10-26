@@ -12,7 +12,7 @@
     overflow: hidden;
 }
 
-.home-container > h2 {
+.home-container>h2 {
     background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
     background-clip: text;
     color: transparent;
@@ -28,7 +28,7 @@
     max-width: 1200px;
     gap: 20px;
     backdrop-filter: blur(10px);
-    box-shadow: 2px 4px 8px rgba(0,0,0,0.5);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .day-card {
@@ -37,8 +37,8 @@
     text-align: center;
     padding: 15px;
     border-radius: 10px;
-    background-color: rgba(255,255,255,0.7);
-    box-shadow: 1px 2px 5px rgba(0,0,0,0.3);
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
 }
 
@@ -46,17 +46,17 @@
     transform: scale(1.05);
 }
 
-.day-card > h3 {
+.day-card>h3 {
     color: #0073e6;
     margin-bottom: 10px;
 }
 
 
-.day-card > p {
+.day-card>p {
     color: #e63946;
 }
 
-.forecast-container > a{
+.forecast-container>a {
     color: black;
     text-decoration: none;
     margin: 0;
@@ -65,7 +65,13 @@
 
 
 @media(max-width:450px) {
-.home-container > h2 {
-    font-size: 30px;
+    .home-container>h2 {
+        font-size: 30px;
+    }
 }
+
+@media(max-width:280px) {
+    .home-container>h2 {
+        font-size: 20px;
+    }
 }
