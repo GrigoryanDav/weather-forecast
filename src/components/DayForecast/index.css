@@ -3,44 +3,69 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: url('../../utils/Images/weather-background-home.jpg');
+    background: url('../../Images/weather-background-home.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .home-container > h2 {
     background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
     background-clip: text;
     color: transparent;
-    font-size: 40px;
+    font-size: 3rem;
 }
 
 .forecast-container {
+    padding: 20px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    height: 80%;
+    max-width: 1200px;
+    gap: 20px;
     backdrop-filter: blur(10px);
     box-shadow: 2px 4px 8px rgba(0,0,0,0.5);
 }
 
 .day-card {
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.7);
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
 }
 
-.forecast-container > a {
-    max-width: 20%;
-    color: black;
-    text-decoration: none;
-    margin: 0 30px;
+.day-card:hover {
+    transform: scale(1.05);
 }
 
 .day-card > h3 {
-    color: blue;
+    color: #0073e6;
+    margin-bottom: 10px;
 }
 
+
 .day-card > p {
-    color: red;
+    color: #e63946;
+}
+
+.forecast-container > a{
+    color: black;
+    text-decoration: none;
+    margin: 0;
+}
+
+
+
+@media(max-width:450px) {
+.home-container > h2 {
+    font-size: 30px;
+}
 }
