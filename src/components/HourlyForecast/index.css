@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     background: url('../../utils/Images/weather-background-hourly.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -20,16 +20,30 @@
 
 .hourly-cards {
     display: flex;
+    gap: 20px;
     flex-wrap: wrap;
     align-items: center;
     text-align: center;
     justify-content: center;
+    padding: 20px;
     backdrop-filter: blur(10px);
     box-shadow: 2px 4px 8px rgba(0,0,0,0.7);
 }
 
 .hour-card {
-    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.5);
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.hour-card:hover {
+    transform: scale(1.05);
 }
 
 .hour-card > p {
@@ -39,12 +53,31 @@
 .hourly-forecast-container > a > button {
     padding: 16px 25px;
     border: none;
-    background:linear-gradient(to right, red, blue, orange);
+    background:linear-gradient(to right, red, orange, blue);
     background-clip: button;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 .hourly-forecast-container > a:hover {
     opacity: 0.7;
+}
+
+@media(max-width:555px) {
+    .hourly-forecast-container > h2 {
+        font-size: 25px;
+    }
+}
+
+@media(max-width:460px) {
+    .hourly-forecast-container > h2 {
+        font-size: 20px;
+    }
+}
+
+@media(max-width:375px) {
+    .hourly-forecast-container > h2 {
+        font-size: 16px;
+    }
 }
