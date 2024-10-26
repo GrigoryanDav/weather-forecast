@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: url('../../Images/weather-background-home.jpg');
+    background: url('../../utils/Images/weather-background-home.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
