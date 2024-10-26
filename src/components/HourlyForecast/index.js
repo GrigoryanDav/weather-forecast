@@ -1,27 +1,27 @@
 import { useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
-import { BASE_URL, CITY, API_KEY } from "../../utils/constants"
+import { BASE_URL, API_KEY } from "../../utils/constants"
 import './index.css'
 
 
 
 const HourlyForecast = () => {
-    const { day } = useParams()
+    const { day, city } = useParams()
     const [hourForecast, setHourForecast] = useState([])
 
     useEffect(() => {
-        fetch(`${BASE_URL}/forecast?q=${CITY}&units=metric&appid=${API_KEY}`)
+        fetch(`${BASE_URL}/forecast?q=${city}&units=metric&appid=${API_KEY}`)
         .then((response) => response.json())
         .then((data) => {
             const hourlyData = data.list.filter((reading) => new Date(reading.dt * 1000).toLocaleDateString('en-EN', { weekday: 'long' }) === day)
             setHourForecast(hourlyData)
         })
         .catch((error) => console.error('Failed to fetch forecast:', error));
-    }, [day])
+    }, [day, city])
 
     return (
             <div className="hourly-forecast-container">
-                <h2>Hourly weather for {day}</h2>
+                <h2>Hourly weather for {day} in {city}</h2>
                 <div className="hourly-cards">
                     {
                         hourForecast.map((reading) => (
@@ -33,7 +33,7 @@ const HourlyForecast = () => {
                         ))
                     }
                 </div>
-                <Link to='/'><button>Back to the Main</button></Link>
+                <Link to={`/${city}`}><button>Back to the Main</button></Link>
             </div>
     )
 }

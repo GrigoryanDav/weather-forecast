@@ -1,14 +1,15 @@
-import { BASE_URL, CITY, API_KEY } from "../../utils/constants";
+import { BASE_URL, API_KEY } from "../../utils/constants";
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import './index.css'
 
 
 const DayForecast = () => {
     const [forecast, setForecast] = useState([])
+    const { city } = useParams()
 
     useEffect(() => {
-        fetch(`${BASE_URL}/forecast?q=${CITY}&units=metric&appid=${API_KEY}`)
+        fetch(`${BASE_URL}/forecast?q=${city}&units=metric&appid=${API_KEY}`)
             .then((response) => response.json())
             .then((data) => {
                 const dailyData = data.list.reduce((acc, reading) => {
@@ -31,15 +32,15 @@ const DayForecast = () => {
                 setForecast(sortedDailyData.slice(0, 5))
             })
             .catch((error) => console.error('Error fetching forecast:', error))
-    }, [])
+    }, [city])
 
     return (
         <div className="home-container">
-            <h2>Weather forecast in {CITY}</h2>
+            <h2>Weather forecast in {city}</h2>
             <div className="forecast-container">
                 {
                     forecast.map((day) => (
-                        <Link to={`${new Date(day.date).toLocaleDateString('en-EN', { weekday: 'long' })}`} key={day.date}>
+                        <Link to={`/${city}/${new Date(day.date).toLocaleDateString('en-EN', { weekday: 'long' })}`} key={day.date}>
                             <div className="day-card">
                                 <h3>{new Date(day.date).toLocaleDateString('en-EN', { weekday: 'long' })}</h3>
                                 <h3>{new Date(day.date).getDate()}</h3>
