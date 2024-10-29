@@ -78,6 +78,6 @@
 
 @media(max-width:375px) {
     .hourly-forecast-container>h2 {
-        font-size: 16px;
+        font-size: 12px;
     }
 }
