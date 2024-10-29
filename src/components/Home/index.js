@@ -5,7 +5,7 @@ import './index.css'
 
 
 
-const Home = () => {
+const Home = ({ onCitySelect }) => {
     const { city } = useParams()
     const [inputValue, setInputValue] = useState(city || '')
     const navigate = useNavigate()
@@ -25,6 +25,7 @@ const Home = () => {
             )
             if(response.ok) {
                 navigate(`/${inputValue}`)
+                onCitySelect()
             } else {
                 alert("City not found. Please enter a valid city name.")
             }
