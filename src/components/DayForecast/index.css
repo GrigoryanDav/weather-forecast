@@ -1,9 +1,9 @@
-.home-container {
+.forecast-page-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background: url('../../utils/Images/weather-background-home.jpg');
+    justify-content: space-evenly;
+    background: url('../../Images/weather-background-home.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -12,7 +12,8 @@
     overflow: hidden;
 }
 
-.home-container>h2 {
+.forecast-page-container>h2 {
+    text-transform: capitalize;
     background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
     background-clip: text;
     color: transparent;
@@ -20,7 +21,6 @@
 }
 
 .forecast-container {
-    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -63,15 +63,27 @@
 }
 
 
+.forecast-page-container > button {
+    border: none;
+    border-radius: 20px;
+    padding: 16px 30px;
+    cursor: pointer;
+    filter: brightness(60%);
+    transition: opacity 0.3s ease;
+}
+
+.forecast-page-container > button:hover {
+    opacity: 0.7;
+}
 
 @media(max-width:450px) {
-    .home-container>h2 {
+    .forecast-page-container>h2 {
         font-size: 20px;
     }
 }
 
 @media(max-width:280px) {
-    .home-container>h2 {
+    .forecast-page-container>h2 {
         font-size: 16px;
     }
 }
