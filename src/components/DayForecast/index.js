@@ -14,6 +14,7 @@ const DayForecast = () => {
             .then((response) => response.json())
             .then((data) => {
                 const dailyData = data.list.reduce((acc, reading) => {
+                    // Convert the timestamp to a readable date (DD/MM/YYYY)
                     const date = new Date(reading.dt * 1000).toLocaleDateString('en-EN');
                     if (!acc[date]) {
                         acc[date] = {
